@@ -1,30 +1,141 @@
+<!--Посилання на сторінку: http://127.0.0.1:5500/index.html#-->
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      h1 {
-        text-align: center;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Звітний документ</h1>
-    <h2>Самостійна робота №1</h2>
-    <h3>
-      Завдання 1. Вибір теми для сайту <br />
-      Бізнес логіка:<br />
-      Тема: Створення веб-сайту для салону краси "The Keratin"<br />
-      Мета проєкту: Забезпечити зручний і сучасний спосіб для клієнтів
-      взаємодіяти із салоном краси. Це включає онлайн-запис, доступ до
-      інформації про послуги та команду салону, відкриті вакансії, а також
-      представлення продукції салону.<br />
-      Сценарій використання сайту: Клієнт обирає послугу, майстра та записується
-      онлайн. Клієнт переглядає інформацію про салон. Клієнт вивчає ціни послуг
-      які надані салоном. Пошукач вакансій подає заявку на роботу. Клієнт
-      переглядає та замовляє продукцію.
-    </h3>
-  </body>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Keratin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>THE KERATIN</h1>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Ліва навігаційна панель -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#"><img src="home-icon.png" alt="Головна"></a></li>
+                <li><a href="#"><img src="user-icon.png" alt="Про нас"></a></li>
+                <li><a href="#">ПОСЛУГИ</a></li>
+                <li><a href="#">ВАКАНСІЇ</a></li>
+                <li><a href="#">МАГАЗИН</a></li>
+            </ul>
+        </nav>
+
+        <!-- Основний контент -->
+        <section class="content">
+            <h2>Your Beauty Jackpot!</h2>
+            <button class="online-button">Онлайн-запис in one click!</button>
+
+            <div class="services">
+                <h3>Наші послуги</h3>
+                <div class="service-grid">
+                    <a href="#" class="service-item">
+                        <p>Макіяж</p>
+                        <img src="make-up.jpeg" alt="Макіяж">
+                    </a>
+                    <a href="#" class="service-item">
+                        <p>Фарбування</p>
+                        <img src="hair.jpg" alt="Волосся">
+                    </a>
+                    <a href="#" class="service-item">
+                        <p>Брейди</p>
+                        <img src="braids.jpeg" alt="Брейди">
+                    </a>
+                    <a href="#" class="service-item">
+                        <p>Манікюр</p>
+                        <img src="nails.jpeg" alt="Манікюр">
+                    </a>
+                </div>
+                <p>Хутчіше записуйся до нас!</p>
+            </div>
+
+        <div class="masters-table">
+            <h3>Наша команда</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Ім'я</th>
+                        <th>Спеціалізація</th>
+                        <th>Досвід роботи</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="memoji1.png"></td>
+                        <td>Дарія Ковальчук</td>
+                        <td>Макіяж, Візаж</td>
+                        <td>5 років</td>
+                    </tr>
+                    <tr>
+                        <td><img src="memoji2.png"></td>
+                        <td>Олена Муслімова</td>
+                        <td>Фарбування волосся</td>
+                        <td>8 років</td>
+                    </tr>
+                    <tr>
+                        <td><img src="memoji3.png"></td>
+                        <td>Олег Знахар</td>
+                        <td>Манікюр</td>
+                        <td>3 роки</td>
+                    </tr>
+                    <tr>
+                        <td><img src="memoji4.png"></td>
+                        <td>Анна Мельник</td>
+                        <td>Брейди, Зачіски</td>
+                        <td>6 років</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="appointment-form">
+    <h3>Записатися на процедуру</h3>
+    <form action="#" method="post">
+        <label for="name">Ім'я:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="service">Виберіть послугу:</label>
+        <select id="service" name="service" required>
+            <option value="">Оберіть послугу</option>
+            <option value="makeup">Макіяж</option>
+            <option value="hair-coloring">Фарбування волосся</option>
+            <option value="manicure">Манікюр</option>
+            <option value="braids">Брейди</option>
+        </select>
+
+        <label for="date">Дата:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="message">Додаткові побажання:</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <button type="submit">Записатися</button>
+    </form>
+</div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <p>📍Наша адреса: м.Київ, вул.Андрія Верхогляда,2</p>
+            </div>
+            <div class="social-links">
+                <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="phone-icon.png" alt="Телефон"></a>
+                <a href="#"><img src="email-icon.png" alt="Email"></a>
+                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="telegram-icon.png" alt="Telegram"></a>
+            </div>
+        </div>
+    </footer>
+</body>
 </html>
