@@ -1,12 +1,14 @@
-<!--Посилання на сторінку: http://127.0.0.1:5500/index.html#-->
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Keratin</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="webisteLogo.png" type="image/png">
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -28,98 +30,115 @@
 
         <!-- Основний контент -->
         <section class="content">
-            <h2>Your Beauty Jackpot!</h2>
-            <button class="online-button">Онлайн-запис in one click!</button>
-
-            <div class="services">
-                <h3>Наші послуги</h3>
-                <div class="service-grid">
-                    <a href="#" class="service-item">
-                        <p>Макіяж</p>
-                        <img src="make-up.jpeg" alt="Макіяж">
-                    </a>
-                    <a href="#" class="service-item">
-                        <p>Фарбування</p>
-                        <img src="hair.jpg" alt="Волосся">
-                    </a>
-                    <a href="#" class="service-item">
-                        <p>Брейди</p>
-                        <img src="braids.jpeg" alt="Брейди">
-                    </a>
-                    <a href="#" class="service-item">
-                        <p>Манікюр</p>
-                        <img src="nails.jpeg" alt="Манікюр">
-                    </a>
-                </div>
-                <p>Хутчіше записуйся до нас!</p>
+            <div class="fullscreen-intro">
+                <div class="intro-text">Your Beauty Jackpot!</div>
             </div>
 
-        <div class="masters-table">
-            <h3>Наша команда</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Ім'я</th>
-                        <th>Спеціалізація</th>
-                        <th>Досвід роботи</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><img src="memoji1.png"></td>
-                        <td>Дарія Ковальчук</td>
-                        <td>Макіяж, Візаж</td>
-                        <td>5 років</td>
-                    </tr>
-                    <tr>
-                        <td><img src="memoji2.png"></td>
-                        <td>Олена Муслімова</td>
-                        <td>Фарбування волосся</td>
-                        <td>8 років</td>
-                    </tr>
-                    <tr>
-                        <td><img src="memoji3.png"></td>
-                        <td>Олег Знахар</td>
-                        <td>Манікюр</td>
-                        <td>3 роки</td>
-                    </tr>
-                    <tr>
-                        <td><img src="memoji4.png"></td>
-                        <td>Анна Мельник</td>
-                        <td>Брейди, Зачіски</td>
-                        <td>6 років</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="appointment-form">
-    <h3>Записатися на процедуру</h3>
-    <form action="#" method="post">
-        <label for="name">Ім'я:</label>
-        <input type="text" id="name" name="name" required>
+            <div class="services-wrapper">
+                <div class="services-header">
+                    <h3>SERVICES SERVICES SERVICES SERVICES SERI</h3>
+                </div>
+                <div class="services-carousel">
+                    <div class="carousel-track">
+                        <div class="service-item">
+                            <img src="make-up.jpeg" alt="Макіяж">
+                            <p class="service-title">Макіяж</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="hair.jpg" alt="Фарбування">
+                            <p class="service-title">Фарбування</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="braids.jpeg" alt="Брейди">
+                            <p class="service-title">Брейди</p>
+                        </div>
+                        <div class="service-item">
+                            <img src="nails.jpeg" alt="Манікюр">
+                            <p class="service-title">Манікюр</p>
+                        </div>
+                    </div>
+                    <!-- Кнопки для перемикання -->
+                    <button class="carousel-btn prev-btn">&lt;</button>
+                    <button class="carousel-btn next-btn">&gt;</button>
+                </div>
+                <div class="services-footer">
+                    <h3>SERVICES SERVICES SERVICES SERVICES SERVICES SERVICES SERVICES SERVI</h3>
+                </div>
+            </div>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+            <div class="appointment-section">
+                <button class="show-form-btn">ONLINE ЗАПИС</button>
+                <div class="appointment-form hidden">
+                    <h3>Онлайн запис</h3>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="name">Ім'я:</label>
+                            <input type="text" id="name" name="name" placeholder="Ваше ім'я" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Виберіть послугу:</label>
+                            <select id="service" name="service" required>
+                                <option value="">Оберіть послугу</option>
+                                <option value="makeup">Макіяж</option>
+                                <option value="hair-coloring">Фарбування волосся</option>
+                                <option value="manicure">Манікюр</option>
+                                <option value="braids">Брейди</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Дата:</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Додаткові побажання:</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Ваші побажання"></textarea>
+                        </div>
+                        <button type="submit">Відправити</button>
+                    </form>
+                </div>
+            </div>
+            <script src="script.js"></script>
 
-        <label for="service">Виберіть послугу:</label>
-        <select id="service" name="service" required>
-            <option value="">Оберіть послугу</option>
-            <option value="makeup">Макіяж</option>
-            <option value="hair-coloring">Фарбування волосся</option>
-            <option value="manicure">Манікюр</option>
-            <option value="braids">Брейди</option>
-        </select>
+            <div class="masters-section">
+                <h3></h3>
+                <div class="master-item">
+                    <img src="memoji1.png" alt="Дарія Ковальчук">
+                    <div class="master-info">
+                        <h4>Дарія Ковальчук</h4>
+                        <p>Спеціалізація: Макіяж, Візаж</p>
+                        <p>Досвід роботи: 5 років</p>
+                    </div>
+                </div>
+                <div class="master-item reverse">
+                    <img src="memoji2.png" alt="Олена Муслімова">
+                    <div class="master-info">
+                        <h4>Олена Муслімова</h4>
+                        <p>Спеціалізація: Фарбування волосся</p>
+                        <p>Досвід роботи: 8 років</p>
+                    </div>
+                </div>
+                <div class="master-item">
+                    <img src="memoji3.png" alt="Олег Знахар">
+                    <div class="master-info">
+                        <h4>Олег Знахар</h4>
+                        <p>Спеціалізація: Манікюр</p>
+                        <p>Досвід роботи: 3 роки</p>
+                    </div>
+                </div>
+                <div class="master-item reverse">
+                    <img src="memoji4.png" alt="Анна Мельник">
+                    <div class="master-info">
+                        <h4>Анна Мельник</h4>
+                        <p>Спеціалізація: Брейди, Зачіски</p>
+                        <p>Досвід роботи: 6 років</p>
+                    </div>
+                </div>
+            </div>
 
-        <label for="date">Дата:</label>
-        <input type="date" id="date" name="date" required>
-
-        <label for="message">Додаткові побажання:</label>
-        <textarea id="message" name="message" rows="4"></textarea>
-
-        <button type="submit">Записатися</button>
-    </form>
-</div>
         </section>
     </div>
 
@@ -138,4 +157,48 @@
         </div>
     </footer>
 </body>
+
+<script>
+    const track = document.querySelector('.carousel-track');
+    const nextButton = document.querySelector('.next-btn');
+    const prevButton = document.querySelector('.prev-btn');
+    const serviceItems = Array.from(track.children);
+    const totalItems = serviceItems.length;
+
+    let currentIndex = 0;
+
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < totalItems - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0;
+        }
+        updateCarousel();
+    });
+
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = totalItems - 1;
+        }
+        updateCarousel();
+    });
+
+    function updateCarousel() {
+        const amountToMove = -currentIndex * 100; // Зсув у % на один елемент
+        track.style.transform = `translateX(${amountToMove}%)`;
+    }
+
+    // Отримуємо кнопку і форму
+        const showFormBtn = document.querySelector('.show-form-btn');
+        const appointmentForm = document.querySelector('.appointment-form');
+
+        // Обробник події для кнопки
+        showFormBtn.addEventListener('click', () => {
+            appointmentForm.classList.toggle('hidden');
+        });
+
+    </script>
+
 </html>

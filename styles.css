@@ -1,29 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
     margin: 0;
     padding: 0;
 }
 
+/* Підключення шрифтів */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-style: normal;
+}
+
+.roboto-light {
+    font-family: "Roboto", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.roboto-bold {
+    font-family: "Roboto", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Шапка */
 header {
-    background-color: #6395a1;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
 }
 
 header .logo h1 {
-    margin: 0;
-    color: #fff;
-    font-size: 24px;
+    margin: 10px;
+    color: black;
+    font-size: 28px;
 }
 
 .main-container {
     display: flex;
 }
 
+/* Сайдбар */
 .sidebar {
-    background-color: #4d768a;
-    width: 70px;
-    padding: 20px;
+    background-color: white;
+    width: 45px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,7 +71,7 @@ header .logo h1 {
 }
 
 .sidebar ul li a {
-    color: #f9dce0;
+    color: black;
     text-decoration: none;
     font-size: 25px;
     display: flex;
@@ -61,10 +91,61 @@ header .logo h1 {
     transform: rotate(180deg);
 }
 
+/* Секція контенту */
 .content {
     flex: 1;
     padding: 40px;
-    background-color: #f9dce0;
+    background-color: white;
+}
+
+/* Початковий екран */
+.fullscreen-intro {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('intro.jpg');
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #84b1bb;
+    margin-bottom: 0px;
+}
+
+.fullscreen-intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.intro-text {
+    position: relative;
+    text-align: center;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    z-index: 1;
+}
+
+/* Анімація для плавної появи */
+.intro-text {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 h2 {
@@ -73,115 +154,264 @@ h2 {
     margin-bottom: 20px;
 }
 
-.online-button {
-    background-color: #84b1bb;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-    margin-bottom: 40px;
-}
-
-.online-button:hover {
-    background-color: #6a9ba5;
-}
-
-.services {
-    background-color: #fff;
+/* Послуги */
+.services-wrapper {
+    margin-bottom: 60px;
+        /* Відступ між секціями */
+    display: flex;
+    align-items: flex-start;
     padding: 20px;
-    border-radius: 10px;
+    justify-content: flex-end;
+    /* Вирівнюємо з правої сторони */
 }
 
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+.services-header {
+    writing-mode: vertical-lr;
+    text-align: center;
+    font-size: 28px;
+    color: #000;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.services-header h3 {
+    transform: rotate(180deg); /* Поворот тексту */
+    transform-origin: center center;
+    font-size: larger;
+}
+
+.services-carousel {
+    position: relative;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 0px;
+    overflow: hidden;
+    width: 70vw;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 75%;
 }
 
 .service-item {
-    display: block;
-    text-align: center;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: transform 0.3s, box-shadow 0.3s;
+    width: 90%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Забороняємо зменшення елементів */
 }
 
 .service-item img {
-    width: 100%;
+    width: 60%;
+    border-radius: 0px;
+}
+
+.service-title {
+    position: absolute;
+    right: 100px;
+    top: 300px;
+    background-color: #f9dce0;
+    color: white;
+    font-weight: 525;
+    padding: 10px 15px;
+    border-radius: 0px;
+    font-size: 1.5rem;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #f9dce0;
+    color: white;
+    font-weight: 550;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.prev-btn {
+    left: -10px;
+}
+
+.next-btn {
+    right: -10px;
+}
+
+.services-footer {
+    position: absolute;
+    left: 225px;
+    right: 10px;
+    bottom: -905px;
+    text-align: left;
+    font-size: 28px;
+    color: #000;
+    writing-mode: horizontal-tb;
+}
+
+/* Працівники */
+.masters-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.masters-section h3 {
+    font-size: 26px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: black;
+}
+
+.master-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: #fdfdfd;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.master-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.master-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 20px;
+}
+
+.master-info {
+    padding: 20px;
+}
+
+.master-info h4 {
+    font-size: 20px;
+    color: #84b1bb;
+    margin-bottom: 10px;
+}
+
+.master-info p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+}
+
+.masters-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+.masters-section::before,
+.masters-section::after {
+    content: '';
+    position: absolute;
+    opacity: 0.5;
+    font-size: 38px;
+    color: #ed8493;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+
+.masters-section::before {
+    content: 'Наша';
+    left: -60px;
+    top: 50%;
+    transform-origin: left center;
+}
+
+.masters-section::after {
+    content: 'Команда';
+    right: -60px;
+    top: 50%;
+    transform-origin: right center;
+}
+
+.master-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: #fdfdfd;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.master-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.master-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 20px;
+}
+
+.master-info {
+    padding: 20px;
+}
+
+.master-info h4 {
+    font-size: 20px;
+    color: #84b1bb;
+    margin-bottom: 10px;
+}
+
+.master-info p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Секція запису */
+.hidden {
+    display: none;
+}
+
+.appointment-section {
+    text-align: center;
+    margin: 30px auto;
+}
+
+.show-form-btn {
+    padding: 13px 50px;
+    white-space: nowrap;
+    font-size: 28px;
+    font-weight: 400;
+    color: black;
+    border: 2px solid black;
+    background-image: url('appoint-button.jpeg');
+    background-size: cover;
+    /* Адаптація зображення під розмір кнопки */
+    background-position: center;
+    /* Центрування зображення */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 10px;
 }
 
-.service-item p {
-    background-color: #f7b7b9;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-    font-weight: bold;
-    color: #000;
-}
-
-.service-item:hover {
+.show-form-btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.service-item:active {
-    transform: scale(0.98);
-}
-
-.masters-table {
-    width: 65%;
-    margin: 30px auto;
-    text-align: center;
-}
-
-.masters-table h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-.masters-table table {
-    width: 100%;
-    border-collapse: collapse;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    background-color: #fdfdfd;
-}
-
-.masters-table th,
-.masters-table td {
-    padding: 12px;
-    border-bottom: 1px solid #f5c5cb;
-}
-
-.masters-table th {
-    background-color: #84b1bb;
-    color: white;
-    font-size: 18px;
-    text-transform: uppercase;
-}
-
-.masters-table tr:nth-child(even) {
-    background-color: white;
-}
-
-.masters-table td {
-    font-size: 16px;
-}
-
-.masters-table tr:hover {
-    background-color: #f1f1f1;
-}
-
-.masters-table img {
-    width: 90px;
-    height: 90px;
-    object-fit: cover;
-    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .appointment-form {
@@ -203,7 +433,6 @@ h2 {
 .appointment-form label {
     display: block;
     margin-bottom: 8px;
-    font-weight: bold;
     color: white;
 }
 
@@ -237,8 +466,9 @@ h2 {
     background-color: #6a9ba5;
 }
 
+/* Секція футеру */
 footer {
-    background-color: #2f3f50;
+    background-color: #84b1bb;
     color: #fff;
     padding: 20px;
     display: flex;
@@ -265,7 +495,6 @@ footer {
 
 .social-links .contact-title {
     margin-bottom: 10px;
-    font-weight: medium;
 }
 
 .social-links a {
