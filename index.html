@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Keratin</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="webisteLogo.png" type="image/png">
+    <link rel="icon" href="images/webisteLogo.png" type="image/png">
 </head>
+
+<button id="scrollToTopBtn" title="Наверх">⬆</button>
 
 <body>
     <header>
@@ -16,13 +18,15 @@
         </div>
     </header>
 
+    <main>
+
     <div class="main-container">
         <!-- Ліва навігаційна панель -->
         <nav class="sidebar">
             <ul>
-                <li><a href="#"><img src="home-icon.png" alt="Головна"></a></li>
-                <li><a href="#"><img src="user-icon.png" alt="Про нас"></a></li>
-                <li><a href="#">ПОСЛУГИ</a></li>
+                <li><a href="#"><img src="images/home-icon.png" alt="Головна"></a></li>
+                <li><a href="#"><img src="images/user-icon.png" alt="Про нас"></a></li>
+                <li><a href="#services">ПОСЛУГИ</a></li>
                 <li><a href="#">ВАКАНСІЇ</a></li>
                 <li><a href="#">МАГАЗИН</a></li>
             </ul>
@@ -34,26 +38,26 @@
                 <div class="intro-text">Your Beauty Jackpot!</div>
             </div>
 
-            <div class="services-wrapper">
+            <div class="services-wrapper" id="services">
                 <div class="services-header">
-                    <h3>SERVICES SERVICES SERVICES SERVICES SERI</h3>
+                    <h3>SERVICES SERVICES SERVICES SERVICES</h3>
                 </div>
                 <div class="services-carousel">
                     <div class="carousel-track">
                         <div class="service-item">
-                            <img src="make-up.jpeg" alt="Макіяж">
+                            <img src="images/make-up.jpeg" alt="Макіяж">
                             <p class="service-title">Макіяж</p>
                         </div>
                         <div class="service-item">
-                            <img src="hair.jpg" alt="Фарбування">
+                            <img src="images/hair.jpg" alt="Фарбування">
                             <p class="service-title">Фарбування</p>
                         </div>
                         <div class="service-item">
-                            <img src="braids.jpeg" alt="Брейди">
+                            <img src="images/braids.jpeg" alt="Брейди">
                             <p class="service-title">Брейди</p>
                         </div>
                         <div class="service-item">
-                            <img src="nails.jpeg" alt="Манікюр">
+                            <img src="images/nails.jpeg" alt="Манікюр">
                             <p class="service-title">Манікюр</p>
                         </div>
                     </div>
@@ -106,7 +110,7 @@
             <div class="masters-section">
                 <h3></h3>
                 <div class="master-item">
-                    <img src="memoji1.png" alt="Дарія Ковальчук">
+                    <img src="images/memoji1.png" alt="Дарія Ковальчук">
                     <div class="master-info">
                         <h4>Дарія Ковальчук</h4>
                         <p>Спеціалізація: Макіяж, Візаж</p>
@@ -114,7 +118,7 @@
                     </div>
                 </div>
                 <div class="master-item reverse">
-                    <img src="memoji2.png" alt="Олена Муслімова">
+                    <img src="images/memoji2.png" alt="Олена Муслімова">
                     <div class="master-info">
                         <h4>Олена Муслімова</h4>
                         <p>Спеціалізація: Фарбування волосся</p>
@@ -122,7 +126,7 @@
                     </div>
                 </div>
                 <div class="master-item">
-                    <img src="memoji3.png" alt="Олег Знахар">
+                    <img src="images/memoji3.png" alt="Олег Знахар">
                     <div class="master-info">
                         <h4>Олег Знахар</h4>
                         <p>Спеціалізація: Манікюр</p>
@@ -130,7 +134,7 @@
                     </div>
                 </div>
                 <div class="master-item reverse">
-                    <img src="memoji4.png" alt="Анна Мельник">
+                    <img src="images/memoji4.png" alt="Анна Мельник">
                     <div class="master-info">
                         <h4>Анна Мельник</h4>
                         <p>Спеціалізація: Брейди, Зачіски</p>
@@ -142,17 +146,19 @@
         </section>
     </div>
 
+    </main>
+
     <footer>
         <div class="footer-content">
             <div class="contact-info">
                 <p>📍Наша адреса: м.Київ, вул.Андрія Верхогляда,2</p>
             </div>
             <div class="social-links">
-                <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
-                <a href="#"><img src="phone-icon.png" alt="Телефон"></a>
-                <a href="#"><img src="email-icon.png" alt="Email"></a>
-                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
-                <a href="#"><img src="telegram-icon.png" alt="Telegram"></a>
+                <a href="#"><img src="images/instagram-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="images/phone-icon.png" alt="Телефон"></a>
+                <a href="#"><img src="images/email-icon.png" alt="Email"></a>
+                <a href="#"><img src="images/facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="images/telegram-icon.png" alt="Telegram"></a>
             </div>
         </div>
     </footer>
@@ -191,14 +197,33 @@
     }
 
     // Отримуємо кнопку і форму
-        const showFormBtn = document.querySelector('.show-form-btn');
-        const appointmentForm = document.querySelector('.appointment-form');
+    const showFormBtn = document.querySelector('.show-form-btn');
+    const appointmentForm = document.querySelector('.appointment-form');
 
-        // Обробник події для кнопки
-        showFormBtn.addEventListener('click', () => {
-            appointmentForm.classList.toggle('hidden');
+    // Обробник події для кнопки
+    showFormBtn.addEventListener('click', () => {
+        appointmentForm.classList.toggle('hidden');
+    });
+
+    //Кнопка угору
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
         });
 
-    </script>
+        scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+
+</script>
 
 </html>

@@ -1,10 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;700&display=swap');
 
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
 body {
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     margin: 0;
     padding: 0;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 /* Підключення шрифтів */
@@ -52,24 +61,30 @@ header .logo h1 {
 /* Сайдбар */
 .sidebar {
     background-color: white;
-    width: 45px;
-    padding: 15px;
+    width: 65px;
+    /* трохи ширший */
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
 }
 
+/* Список у сайдбарі */
 .sidebar ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
     position: sticky;
     top: 0;
 }
 
+/* Елементи списку */
 .sidebar ul li {
     margin-bottom: 40px;
 }
 
+/* Посилання з вертикальним текстом */
 .sidebar ul li a {
     color: black;
     text-decoration: none;
@@ -84,10 +99,13 @@ header .logo h1 {
     width: 100%;
 }
 
+/* Іконки */
 .sidebar ul li a img {
-    width: 50px;
-    height: 50px;
-    margin-right: 5px;
+    width: 45px;
+    /* трохи більші іконки */
+    height: 45px;
+    margin-right: 0;
+    /* прибираємо зайвий відступ */
     transform: rotate(180deg);
 }
 
@@ -101,16 +119,21 @@ header .logo h1 {
 /* Початковий екран */
 .fullscreen-intro {
     position: relative;
-    width: 100%;
+    width: calc(100% - 60px);
     height: 100vh;
-    background-image: url('intro.jpg');
+    margin-left: 60px;
+    background-image: url('images/intro.jpg');
     background-position: center;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-repeat: repeat;
+    background-size: auto;
     font-weight: 600;
     color: #84b1bb;
     margin-bottom: 0px;
+    overflow: hidden;
 }
 
 .fullscreen-intro::before {
@@ -130,6 +153,7 @@ header .logo h1 {
     text-transform: uppercase;
     letter-spacing: 2px;
     z-index: 1;
+    font-weight: 20;
 }
 
 /* Анімація для плавної появи */
@@ -156,11 +180,11 @@ h2 {
 
 /* Послуги */
 .services-wrapper {
-    margin-bottom: 60px;
+    margin-bottom: 10px;
         /* Відступ між секціями */
     display: flex;
     align-items: flex-start;
-    padding: 20px;
+    padding: 80px;
     justify-content: flex-end;
     /* Вирівнюємо з правої сторони */
 }
@@ -399,7 +423,7 @@ h2 {
     font-weight: 400;
     color: black;
     border: 2px solid black;
-    background-image: url('appoint-button.jpeg');
+    background-image: url('images/appoint-button.jpeg');
     background-size: cover;
     /* Адаптація зображення під розмір кнопки */
     background-position: center;
@@ -506,4 +530,73 @@ footer {
     width: 30px;
     height: 30px;
     margin-right: 12px;
+}
+
+/* Кнопка "Угору" */
+#scrollToTopBtn {
+    display: none;
+    /* спочатку прихована */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    font-size: 22px;
+    background-color: #f9dce0;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    header .logo h1 {
+        font-size: 20px;
+    }
+
+    .main-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 10px;
+    }
+
+    .services-carousel {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .service-item img {
+        width: 80%;
+    }
+
+    .appointment-form {
+        padding: 15px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
